@@ -58,3 +58,16 @@ require'lspconfig'.lua_ls.setup {
     return true
   end
 }
+
+require'lspconfig'.rust_analyzer.setup{
+  settings = {
+    ['rust-analyzer'] = {
+      diagnostics = {
+        enable = false;
+      }
+    }
+  }
+}
+
+require'lspconfig'.gopls.setup{}
+require'lspconfig'.pylyzer.setup{}
