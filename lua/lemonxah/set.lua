@@ -24,3 +24,13 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 vim.opt.colorcolumn = "120"
 vim.g.mapleader = " "
+vim.opt.list = true
+vim.opt.listchars = {
+  tab = "▸ ",
+  trail = "·",
+  space = "·",
+  extends = "❯",
+  precedes = "❮",
+  nbsp = "␣",
+  eol = "↲",
+}

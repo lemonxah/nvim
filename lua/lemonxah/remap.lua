@@ -19,3 +19,39 @@ end)
 
 vim.keymap.set("n", "<leader>r", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+
+vim.keymap.set("n", "<leader>1", "1gt")
+vim.keymap.set("n", "<leader>2", "2gt")
+vim.keymap.set("n", "<leader>3", "3gt")
+vim.keymap.set("n", "<leader>4", "4gt")
+vim.keymap.set("n", "<leader>5", "5gt")
+vim.keymap.set("n", "<leader>6", "6gt")
+vim.keymap.set("n", "<leader>7", "7gt")
+vim.keymap.set("n", "<leader>8", "8gt")
+vim.keymap.set("n", "<leader>9", "9gt")
+vim.keymap.set("n", "<leader>0", "0gt")
+
+-- switching to last active tab
+vim.api.nvim_create_autocmd("TabLeave",  {
+    pattern = "*",
+    callback = function()
+        vim.api.nvim_set_keymap('n', '<C-l>', '<cmd>tabn ' .. vim.api.nvim_tabpage_get_number(0) .. '<CR>', { noremap = true, silent = true })
+        vim.api.nvim_set_keymap('v', '<C-l>', '<cmd>tabn ' .. vim.api.nvim_tabpage_get_number(0) .. '<CR>', { noremap = true, silent = true })
+    end
+})
+
+-- tabs
+vim.keymap.set("n", "<leader>tn", function()
+  vim.cmd.tabnew()
+  vim.cmd.Ex()
+end)
+vim.keymap.set("n", "<leader>tc", vim.cmd.tabclose)
+
+-- save with C-s:w
+vim.keymap.set("i", "<C-s>", function()
+  vim.cmd.w()
+  local keys = vim.api.nvim_replace_termcodes("<ESC>", true, false, true)
+  vim.api.nvim_feedkeys(keys, "i", true)
+end)
+vim.keymap.set("n", "<C-s>", vim.cmd.w)
+
