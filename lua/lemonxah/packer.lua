@@ -33,4 +33,11 @@ return require('packer').startup(function(use)
 			{'L3MON4D3/LuaSnip'},
 		}
 	}
+  use( 'hrsh7th/nvim-cmp' )
+  use( 'hrsh7th/cmp-nvim-lsp' )
+  use( 'L3MON4D3/LuaSnip' )
+  use( 'hrsh7th/cmp-buffer' )
+  use( 'neovim/nvim-lspconfig' )
+  use( 'jose-elias-alvarez/null-ls.nvim' )
+  use( 'MunifTanjim/prettier.nvim' )
 end)

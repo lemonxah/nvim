@@ -19,16 +19,7 @@ require('mason-lspconfig').setup({
   },
 })
 
-local cmp = require('cmp')
-local cmp_select = {behavior = cmp.SelectBehavior.Select}
-local cmp_mappings = lsp_zero.defaults.cmp_mappings({
-	['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-	['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-	['<C-y>'] = cmp.mapping.confirm({ select = true }),
-	['<C-Space>'] = cmp.mapping.complete(),
-})
-
-require'lspconfig'.lua_ls.setup {
+ require'lspconfig'.lua_ls.setup {
   on_init = function(client)
     local path = client.workspace_folders[1].name
     if not vim.loop.fs_stat(path..'/.luarc.json') and not vim.loop.fs_stat(path..'/.luarc.jsonc') then
@@ -71,3 +62,10 @@ require'lspconfig'.rust_analyzer.setup{
 
 require'lspconfig'.gopls.setup{}
 require'lspconfig'.pylyzer.setup{}
+require'lspconfig'.tsserver.setup{}
+require'lspconfig'.clangd.setup{}
+require'lspconfig'.cssls.setup{}
+require'lspconfig'.jsonls.setup{}
+require'lspconfig'.yamlls.setup{}
+require'lspconfig'.tailwindcss.setup{}
+require'lspconfig'.volar.setup{}
