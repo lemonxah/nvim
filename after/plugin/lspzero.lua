@@ -3,12 +3,12 @@ local lsp_zero = require('lsp-zero')
 lsp_zero.on_attach(function(client, bufnr)
   -- see :help lsp-zero-keybindings
   -- to learn the available actions
-  lsp_zero.default_keymaps({buffer = bufnr})
+  lsp_zero.default_keymaps({ buffer = bufnr })
 end)
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-  -- Replace the language servers listed here 
+  -- Replace the language servers listed here
   -- with the ones you want to install
   ensure_installed = {
     'tsserver', 'rust_analyzer', 'pylyzer', 'eslint', 'clangd', 'cssls', 'gopls', 'jsonls', 'lua_ls',
@@ -19,10 +19,10 @@ require('mason-lspconfig').setup({
   },
 })
 
- require'lspconfig'.lua_ls.setup {
+require 'lspconfig'.lua_ls.setup {
   on_init = function(client)
     local path = client.workspace_folders[1].name
-    if not vim.loop.fs_stat(path..'/.luarc.json') and not vim.loop.fs_stat(path..'/.luarc.jsonc') then
+    if not vim.loop.fs_stat(path .. '/.luarc.json') and not vim.loop.fs_stat(path .. '/.luarc.jsonc') then
       client.config.settings = vim.tbl_deep_extend('force', client.config.settings, {
         Lua = {
           runtime = {
@@ -50,22 +50,22 @@ require('mason-lspconfig').setup({
   end
 }
 
-require'lspconfig'.rust_analyzer.setup{
+require 'lspconfig'.rust_analyzer.setup {
   settings = {
     ['rust-analyzer'] = {
       diagnostics = {
-        enable = false;
+        enable = false,
       }
     }
   }
 }
 
-require'lspconfig'.gopls.setup{}
-require'lspconfig'.pylyzer.setup{}
-require'lspconfig'.tsserver.setup{}
-require'lspconfig'.clangd.setup{}
-require'lspconfig'.cssls.setup{}
-require'lspconfig'.jsonls.setup{}
-require'lspconfig'.yamlls.setup{}
-require'lspconfig'.tailwindcss.setup{}
-require'lspconfig'.volar.setup{}
+require 'lspconfig'.gopls.setup {}
+require 'lspconfig'.pylyzer.setup {}
+require 'lspconfig'.tsserver.setup {}
+require 'lspconfig'.clangd.setup {}
+require 'lspconfig'.cssls.setup {}
+require 'lspconfig'.jsonls.setup {}
+require 'lspconfig'.yamlls.setup {}
+require 'lspconfig'.tailwindcss.setup {}
+require 'lspconfig'.volar.setup {}
