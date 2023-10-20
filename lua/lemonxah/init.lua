@@ -1,3 +1,8 @@
+
+require("lemonxah/set")
 require("lemonxah/remap")
 require("lemonxah/packer")
-require("lemonxah/set")
+
+-- empty setup using defaults
+require("nvim-tree").setup()
+

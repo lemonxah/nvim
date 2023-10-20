@@ -1,3 +1,10 @@
+-- disable netrw at the very start of your init.lua
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+vim.g.mapleader = " "
+-- set termguicolors to enable highlight groups
+vim.opt.termguicolors = true
+
 vim.opt.guicursor = ""
 
 vim.opt.nu = true
@@ -23,7 +30,6 @@ vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 vim.opt.colorcolumn = "180"
-vim.g.mapleader = " "
 vim.opt.list = true
 vim.opt.listchars = {
   tab = "▸ ",

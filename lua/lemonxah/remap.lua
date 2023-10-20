@@ -1,5 +1,5 @@
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>pv", vim.cmd.NvimTreeOpen)
 
 vim.keymap.set("v", "<S-Down>", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "<S-Up>", ":m '<-2<CR>gv=gv")
@@ -43,7 +43,7 @@ vim.api.nvim_create_autocmd("TabLeave",  {
 -- tabs
 vim.keymap.set("n", "<leader>tn", function()
   vim.cmd.tabnew()
-  vim.cmd.Ex()
+  vim.cmd.NvimTreeOpen()
 end)
 vim.keymap.set("n", "<leader>tc", vim.cmd.tabclose)
 
