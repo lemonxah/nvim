@@ -12,7 +12,7 @@ require('mason-lspconfig').setup({
   -- with the ones you want to install
   ensure_installed = {
     'tsserver', 'rust_analyzer', 'eslint', 'clangd', 'cssls', 'gopls', 'jsonls', 'lua_ls',
-    'volar', 'yamlls', 'tailwindcss', 'omnisharp_mono', 'pyright',
+    'volar', 'yamlls', 'tailwindcss', 'csharp_ls', 'pyright',
   },
   handlers = {
     lsp_zero.default_setup,
@@ -69,3 +69,4 @@ require 'lspconfig'.jsonls.setup {}
 require 'lspconfig'.yamlls.setup {}
 require 'lspconfig'.tailwindcss.setup {}
 require 'lspconfig'.volar.setup {}
+require 'lspconfig'.csharp_ls.setup {}
