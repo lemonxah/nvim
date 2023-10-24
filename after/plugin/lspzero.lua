@@ -12,7 +12,8 @@ require('mason-lspconfig').setup({
   -- with the ones you want to install
   ensure_installed = {
     'tsserver', 'rust_analyzer', 'eslint', 'clangd', 'cssls', 'gopls', 'jsonls', 'lua_ls',
-    'volar', 'yamlls', 'tailwindcss', 'csharp_ls', 'pyright', 'powershell_es',
+    'volar', 'yamlls', 'tailwindcss', 'csharp_ls', 'pyright', 'powershell_es', 'dockerls',
+    'html', 'jsonls', 'taplo', 'ansiblels',
   },
   handlers = {
     lsp_zero.default_setup,
