@@ -12,7 +12,7 @@ require('mason-lspconfig').setup({
   -- with the ones you want to install
   ensure_installed = {
     'tsserver', 'rust_analyzer', 'eslint', 'clangd', 'cssls', 'gopls', 'jsonls', 'lua_ls',
-    'volar', 'yamlls', 'tailwindcss', 'csharp_ls', 'pyright',
+    'volar', 'yamlls', 'tailwindcss', 'csharp_ls', 'pyright', 'powershell_es',
   },
   handlers = {
     lsp_zero.default_setup,
@@ -60,6 +60,7 @@ require 'lspconfig'.rust_analyzer.setup {
   }
 }
 
+require 'lspconfig'.powershell_es.setup {}
 require 'lspconfig'.gopls.setup {}
 require 'lspconfig'.pyright.setup {}
 require 'lspconfig'.tsserver.setup {}
