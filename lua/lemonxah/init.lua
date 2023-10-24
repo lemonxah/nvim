@@ -4,3 +4,4 @@ require("lemonxah/packer")
 
 -- empty setup using defaults
 require("nvim-tree").setup()
+

@@ -7,6 +7,15 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
   use('nvim-lua/plenary.nvim')
+  use('simrat39/rust-tools.nvim')
+  use('mfussenegger/nvim-dap')
+
+  vim.keymap.set("n", "<leader>f", function()
+    vim.lsp.buf.format()
+  end)
+
+  vim.keymap.set("n", "<leader>r", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
+  vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.3',
     -- or                            , branch = '0.1.x',
@@ -41,4 +50,19 @@ return require('packer').startup(function(use)
   use('MunifTanjim/prettier.nvim')
   use('nvim-tree/nvim-web-devicons')
   use('nvim-tree/nvim-tree.lua')
+
+  -- Useful completion sources:
+  use 'hrsh7th/cmp-nvim-lsp-signature-help'
+  use 'hrsh7th/cmp-vsnip'
+  use 'hrsh7th/cmp-path'
+  use 'hrsh7th/vim-vsnip'
+  use {
+    "folke/trouble.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    opts = {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    },
+  }
 end)
