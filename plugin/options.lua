@@ -11,7 +11,7 @@ vim.o.mouse = "a"
 vim.o.backup = false
 vim.o.swapfile = false
 vim.o.undofile = true
-vim.o.undodir = os.getenv("HOME") .. "/.vim/undodir"
+vim.o.undodir = os.getenv "HOME" .. "/.vim/undodir"
 
 vim.o.hlsearch = false
 vim.o.incsearch = true
@@ -31,8 +31,8 @@ vim.o.signcolumn = "yes"
 vim.o.updatetime = 50
 
 vim.opt.list = true
-vim.opt.listchars:append("space:⋅")
-vim.opt.listchars:append("eol:↴")
+vim.opt.listchars:append "space:⋅"
+vim.opt.listchars:append "eol:↴"
 vim.o.termguicolors = true
 
 vim.lsp.inlay_hint.enable(true)

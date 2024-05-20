@@ -1,9 +1,9 @@
 -- Replace word under cursor
 vim.keymap.set(
-	"n",
-	"<leader>r",
-	":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>",
-	{ desc = "Replace word under cursor" }
+  "n",
+  "<leader>r",
+  ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>",
+  { desc = "Replace word under cursor" }
 )
 
 vim.keymap.set("n", "so", ":e $MYVIMRC<CR>", { desc = "Open init.lua" })
@@ -48,19 +48,19 @@ vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]], { desc = "Delete into void" }
 
 -- toggle inlay hints
 vim.keymap.set(
-	"n",
-	"<leader>i",
-	"<cmd>lua vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())<CR>",
-	{ desc = "Toggle Inlay Hints" }
+  "n",
+  "<leader>i",
+  "<cmd>lua vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())<CR>",
+  { desc = "Toggle Inlay Hints" }
 )
 
 -- diagnostic
 local diagnostic_goto = function(next, severity)
-	local go = next and vim.diagnostic.goto_next or vim.diagnostic.goto_prev
-	severity = severity and vim.diagnostic.severity[severity] or nil
-	return function()
-		go({ severity = severity })
-	end
+  local go = next and vim.diagnostic.goto_next or vim.diagnostic.goto_prev
+  severity = severity and vim.diagnostic.severity[severity] or nil
+  return function()
+    go { severity = severity }
+  end
 end
 vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Line Diagnostics" })
 vim.keymap.set("n", "]d", diagnostic_goto(true), { desc = "Next Diagnostic" })
@@ -82,7 +82,7 @@ vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Go to Lower Window", remap = tr
 vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Go to Upper Window", remap = true })
 vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Go to Right Window", remap = true })
 
-local builtin = require("telescope.builtin")
+local builtin = require "telescope.builtin"
 vim.keymap.set("n", "<leader><leader>", builtin.find_files, { desc = "Find Files" })
 vim.keymap.set("n", "<leader>ff", builtin.git_files, { desc = "Find Git Files" })
 vim.keymap.set("n", "<leader>f/", builtin.live_grep, { desc = "All files Live Grep" })
